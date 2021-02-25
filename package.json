@@ -1,0 +1,8 @@
+{
+    "name": "webrtc-testing",
+    "description": "Node server project for WebRTC",
+    "dependencies": {
+        "node-static": "^0.7.11",
+        "socket.io": "^3.1.1"
+    }
+}
