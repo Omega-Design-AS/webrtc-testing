@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Realtime communication with WebRTC</title>
+
+  <link rel="stylesheet" href="/css/main.css" />
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="trainer"><video id="trainerVideo" autoplay>trainerVideo</video></div>
+    <div class="participantOne"><video id="participantOneVideo" autoplay>participantOneVideo</video></div>
+    <div class="participantTwo"><video id="participantTwoVideo" autoplay>participantTwoVideo</video></div>
+    <div class="participantThree"><video id="participantThreeVideo" autoplay>participantThreeVideo</video></div>
+    <div class="participantFour"><video id="participantFourVideo" autoplay>participantFourVideo</video></div>
+    <div class="participantFive"><video id="participantFiveVideo" autoplay>participantFiveVideo</video></div>
+    <div class="preview"><video id="localVideo" autoplay muted>localVideo</video></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.2/socket.io.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>

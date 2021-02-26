@@ -1,8 +1,15 @@
 {
     "name": "webrtc-testing",
     "description": "Node server project for WebRTC",
+    "devDependencies": {
+        "npm-force-resolutions": "0.0.6"
+    },
     "dependencies": {
         "node-static": "^0.7.11",
         "socket.io": "^3.1.1"
-    }
+    },
+    "resolutions": {
+        "minimist": "^1.2.5"
+    },
+    "preinstall": "npx npm-force-resolutions"
 }

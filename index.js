@@ -10,7 +10,7 @@ var app = http.createServer(function(req, res) {
   fileServer.serve(req, res);
 }).listen(8080);
 
-var io = socketIO.listen(app);
+var io = new socketIO.Server(app);
 io.sockets.on('connection', function(socket) {
 
   // convenience function to log server messages on the client
@@ -38,7 +38,7 @@ io.sockets.on('connection', function(socket) {
       log('Client ID ' + socket.id + ' created room ' + room);
       socket.emit('created', room, socket.id);
 
-    } else if (numClients === 1) {
+    } else if (numClients < 6) {
       log('Client ID ' + socket.id + ' joined room ' + room);
       io.sockets.in(room).emit('join', room);
       socket.join(room);
