@@ -16,6 +16,10 @@ const httpsOptions = {
 };
 
 const fileServer = new(nodeStatic.Server)();
+fileServer.defaultHeaders = {
+  "Access-Control-Allow-Origin": "*",
+};
+
 const app = https.createServer(httpsOptions, function(req, res) {
   fileServer.serve(req, res);
 }).listen(8080);
