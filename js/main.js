@@ -11,9 +11,9 @@ var turnReady;
 
 var pcConfig = {
   'iceServers': [
-    {
-      'urls': 'stun:stun.l.google.com:19302'
-    },
+    // {
+    //   'urls': 'stun:stun.l.google.com:19302'
+    // },
     // {
     //   'urls': 'turn:52.157.83.233:3478?transport=tcp',
     //   'username': 'user',
@@ -24,6 +24,16 @@ var pcConfig = {
     //   'username': 'user',
     //   'credential': 'omega-design'
     // },
+    {
+      'urls': 'turn:79.160.162.234:3478',
+      'username': 'proud',
+      'credential': 'valhalla'
+    },
+    {
+      'urls': 'stun:79.160.162.234:3478',
+      'username': 'proud',
+      'credential': 'valhalla'
+    },
   ]
 };
 
