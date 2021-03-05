@@ -21,6 +21,7 @@ fileServer.defaultHeaders = {
 };
 
 const app = https.createServer(httpsOptions, function(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   fileServer.serve(req, res);
 }).listen(8080);
 
