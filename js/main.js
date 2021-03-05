@@ -10,16 +10,21 @@ var remoteStreams = [];
 var turnReady;
 
 var pcConfig = {
-  'iceServers': [{
-    'urls': 'turn:52.157.83.233:3478?transport=tcp',
-    'username': 'user',
-    'credential': 'omega-design'
-  },
-  {
-    'urls': 'stun:52.157.83.233:3478',
-    'username': 'user',
-    'credential': 'omega-design'
-  },]
+  'iceServers': [
+    {
+      'urls': 'stun:stun.l.google.com:19302'
+    },
+    // {
+    //   'urls': 'turn:52.157.83.233:3478?transport=tcp',
+    //   'username': 'user',
+    //   'credential': 'omega-design'
+    // },
+    // {
+    //   'urls': 'stun:52.157.83.233:3478',
+    //   'username': 'user',
+    //   'credential': 'omega-design'
+    // },
+  ]
 };
 
 // Set up audio and video regardless of what devices are present.
@@ -238,6 +243,7 @@ function handleRemoteStreamAdded(event) {
   console.log('Remote stream added.');
   remoteStreams.add(event.stream);
   participantStreams = document.querySelectorAll('.participantVideo');
+  
   for (let index = 0; index < remoteStreams.length; index++) {
     const stream = remoteStreams[index];
     participantStreams[index].srcObject = stream;
